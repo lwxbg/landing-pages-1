@@ -7,14 +7,14 @@ export const site = {
   product: 'O Código do Vídeo Motivacional',
   // Cole aqui o link de checkout da Kiwify/Hotmart/Eduzz (precisa começar com https://).
   // Vazio ou de outro site = botões só levam até a oferta. Lista de sites aceitos: src/security.js
-  checkoutUrl: '',
+  checkoutUrl: 'https://pay.cakto.com.br/akrk2ep_1155147',
   year: 2026,
 }
 
 export const price = {
   from: 'R$ 47,00',
   now: '19,90',
-  installments: 'ou 3x de R$ 7,29 no cartão',
+  installments: 'pagamento único no Pix ou no cartão',
   guaranteeDays: 7,
 }
 

@@ -7,7 +7,7 @@ export default function Sample() {
       <SectionHead eyebrow="Amostra grátis" title="Uma página" muted="do capítulo 2" />
       <div className="sample">
         <article className="page">
-          <span className="folio">pág. 15</span>
+          <span className="folio">pág. 2</span>
           <span className="eyebrow">Gancho tipo · Provocação</span>
           <h3>A pessoa fica para provar que você está errado</h3>
           <ol>

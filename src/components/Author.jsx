@@ -19,13 +19,13 @@ export default function Author() {
             Feito por quem <span>edita todo dia</span>
           </h2>
           <p>
-            Eu comecei o <strong>{site.brand}</strong> editando cortes motivacionais no celular, sem curso e sem
-            computador. Durante meses os vídeos não passavam de poucas views. Quando eu entendi a estrutura, o perfil
-            passou de <strong>1 milhão de visualizações</strong>.
+            Eu comecei o <strong>{site.brand}</strong> em julho de 2026, editando cortes motivacionais no celular e
+            postando 2 vídeos por dia. Com o tempo, passei a postar menos e caprichar mais: roteiro antes de editar e
+            cada detalhe pensado. Em cerca de 3 meses, o perfil passou de <strong>1 milhão de visualizações</strong>.
           </p>
           <p>
-            Este e-book é o caderno que eu queria ter tido no começo: tudo o que eu testei, organizado para você não
-            perder os meses que eu perdi.
+            Este e-book reúne tudo o que eu testei nesse caminho, até as configurações exatas que eu uso no CapCut,
+            para você chegar lá mais rápido.
           </p>
           <span className="signature">— {site.brand}</span>
         </div>
@@ -44,7 +44,7 @@ export default function Author() {
 
         <div className={`chart ${started ? 'play' : 'armed'}`}>
           <div className="marker" aria-hidden="true">
-            <span>jul 2026 · a virada</span>
+            <span>jul 2026 · primeiro vídeo</span>
           </div>
           <svg
             viewBox="0 0 600 160"
@@ -73,7 +73,7 @@ export default function Author() {
               <img key={v.src} src={v.src} alt={`Vídeo fixado com ${v.views} visualizações`} loading="lazy" />
             ))}
           </div>
-          <p>Os três são analisados, cena por cena, no capítulo 7.</p>
+          <p>Os três são analisados no capítulo 7: gancho, frase final e por que funcionaram.</p>
         </div>
       </div>
     </Section>

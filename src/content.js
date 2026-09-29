@@ -73,14 +73,14 @@ export const hooks = [
 ]
 
 export const chapters = [
-  { n: 'CAP 1', title: 'Anatomia do viral', text: 'A estrutura gancho, tensão, virada e soco, explicada cena por cena.', page: '06' },
-  { n: 'CAP 2', title: '50 ganchos', text: 'Frases de abertura separadas por tipo: provocação, pergunta, choque e identificação.', page: '14' },
-  { n: 'CAP 3', title: 'A trilha certa', text: 'Que tipo de música usar em cada emoção e como cortar no ritmo da batida.', page: '26' },
-  { n: 'CAP 4', title: 'Legenda que prende', text: 'Fonte, tamanho, cor e a palavra que precisa de destaque em cada frase.', page: '32' },
-  { n: 'CAP 5', title: '10 roteiros prontos', text: 'Modelos para preencher. Você escolhe um, edita e posta no mesmo dia.', page: '38' },
-  { n: 'CAP 6', title: 'Material sem strike', text: 'Onde achar clipes, falas e músicas, e o que evitar para não perder a conta.', page: '50' },
-  { n: 'CAP 7', title: 'Bastidores', text: 'Os 3 vídeos fixados do perfil, com mais de 440 mil views somadas, analisados cena por cena.', page: '55' },
-  { n: 'BÔNUS', title: 'Checklist e calendário', text: '10 itens para conferir antes de postar e 30 ideias de vídeo para o próximo mês.', page: '60' },
+  { n: 'CAP 1', title: 'Anatomia do viral', text: 'A estrutura gancho, tensão, virada e soco, explicada parte por parte, com exemplo.', page: '1' },
+  { n: 'CAP 2', title: '50 ganchos', text: 'Frases de abertura separadas por tipo: provocação, pergunta, choque e identificação.', page: '2' },
+  { n: 'CAP 3', title: 'A trilha certa', text: 'Que tipo de música usar em cada emoção e como cortar no ritmo da batida.', page: '3' },
+  { n: 'CAP 4', title: 'Legenda que prende', text: 'Fonte, tamanho, cor e a palavra que precisa de destaque em cada frase.', page: '3' },
+  { n: 'CAP 5', title: '10 roteiros prontos', text: 'Modelos para preencher. Você escolhe um, edita e posta no mesmo dia.', page: '4' },
+  { n: 'CAP 6', title: 'Material sem strike', text: 'Onde achar clipes, falas e músicas, e o que evitar para não perder a conta.', page: '3' },
+  { n: 'CAP 7', title: 'Bastidores', text: 'Os 3 vídeos fixados do perfil, com mais de 440 mil views somadas, analisados: gancho, frase final e por que funcionaram.', page: '4' },
+  { n: 'BÔNUS', title: 'Minha edição e rotina', text: 'Os ajustes exatos que eu uso no CapCut, meus horários de postagem, checklist de 10 itens e 30 ideias de vídeo.', page: '5' },
 ]
 
 export const sampleHooks = [
@@ -93,7 +93,7 @@ export const sampleHooks = [
 export const sampleFeatures = [
   ['Pronto para copiar', 'Cada gancho funciona sozinho. É só escolher e colar na legenda do CapCut.'],
   ['Com dica de edição', 'Toda página diz como aquilo aparece na tela, não só o que escrever.'],
-  ['Feito para o celular', 'PDF vertical, letra grande. Dá para ler com o CapCut aberto do lado.'],
+  ['Direto ao ponto', 'São 5 páginas, tudo em listas e tabelas. Dá para consultar com o CapCut aberto do lado.'],
 ]
 
 export const timeCompare = {
@@ -150,6 +150,7 @@ export const offerItems = [
   { label: 'E-book completo, 7 capítulos', value: 'R$ 27' },
   { label: '50 ganchos prontos para copiar', value: 'incluso' },
   { label: '10 roteiros para preencher', value: 'incluso' },
+  { label: 'Minha edição no CapCut: ajustes exatos', value: 'incluso', bonus: true },
   { label: 'Checklist de postagem', value: 'R$ 9', bonus: true },
   { label: 'Calendário de 30 ideias de vídeo', value: 'R$ 11', bonus: true },
   { label: 'Atualizações futuras', value: 'grátis' },
@@ -160,7 +161,7 @@ export const faq = [
   ['Preciso saber editar?', 'Não. O e-book mostra o que colocar no vídeo. Se você sabe cortar um clipe e escrever um texto no CapCut, já consegue aplicar.'],
   ['Serve para perfil de cortes?', 'Sim. A estrutura de gancho, tensão, virada e soco funciona tanto para vídeos autorais quanto para cortes de podcasts e palestras.'],
   ['Funciona para Reels e Shorts também?', 'Sim. O formato vertical e a lógica de prender nos primeiros segundos são os mesmos no TikTok, no Instagram e no YouTube Shorts.'],
-  ['Preciso de computador?', 'Não. Tudo foi pensado para o CapCut no celular, e o PDF foi diagramado para ler na tela do celular.'],
+  ['Preciso de computador?', 'Não. Tudo foi pensado para o CapCut no celular, e o PDF abre em qualquer celular.'],
   ['O acesso expira?', 'Não. O PDF é seu para sempre, e as atualizações futuras chegam no mesmo e-mail sem custo extra.'],
   ['E se eu não gostar?', 'Você tem 7 dias para pedir o reembolso completo, sem precisar explicar o motivo.'],
 ]

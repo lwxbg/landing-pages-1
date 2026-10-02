@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Abrindo a página…</title>
+<!-- Página de erro do GitHub Pages: é ela que aparece quando o endereço não existe.
+     Se o link chegou com algum caractere a mais (por exemplo .../kit-bercario-pronto/**),
+     o visitante é levado para a página certa em vez de ver o erro 404.
+     Os parâmetros do anúncio (utm_*, fbclid) são mantidos.
+     O script fica aqui dentro porque esta página é servida em qualquer endereço,
+     então um arquivo .js separado não seria encontrado. -->
+<script>
+(function () {
+  var caminho = window.location.pathname;
+  var partes = caminho.split('/');
+  var destino = null;
+
+  for (var i = 0; i < partes.length; i++) {
+    if (partes[i].toLowerCase().indexOf('kit-bercario-pronto') === 0) {
+      destino = partes.slice(0, i).join('/') + '/kit-bercario-pronto/';
+      break;
+    }
+  }
+
+  // Qualquer outro endereço errado volta para a página inicial do site.
+  if (!destino) {
+    destino = /\.github\.io$/i.test(window.location.hostname) && partes[1] ? '/' + partes[1] + '/' : '/';
+  }
+
+  // Se o destino for o próprio endereço atual, não redireciona (evita ficar em círculo).
+  if (destino !== caminho) {
+    window.location.replace(destino + window.location.search + window.location.hash);
+  }
+})();
+</script>
+<style>
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; background: #FBF7EE; color: #4A2A12; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; text-align: center; }
+  p { margin: 0; font-size: 18px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<p>Página não encontrada. Confira o endereço e tente de novo.</p>
+</body>
+</html>

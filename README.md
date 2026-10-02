@@ -95,4 +95,22 @@ src/
   App.jsx           ← ordem das seções
   components/       ← uma seção por arquivo
 public/             ← logo, capas e vídeo
+  kit-bercario-pronto/  ← segunda página (veja abaixo)
 ```
+
+## Segunda página: Kit Berçário Pronto
+
+Página estática (sem React) que fica em **`public/kit-bercario-pronto/`** e é publicada junto com o site,
+no endereço `https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/kit-bercario-pronto/`.
+
+| Arquivo | O que mudar ali |
+|---|---|
+| `index.html` | Textos, preço (aparece em 2 lugares) e link de checkout (3 botões: procure por `pay.cakto.com.br`) |
+| `app.js` | Tempo da missão das 3 estrelas (`SEGUNDOS_DA_MISSAO`) e ID do Pixel da Meta (`META_PIXEL_ID`) |
+| `styles.css` | Visual e animações |
+| `assets/` | Vídeo (`vsl.mp4`), capa e páginas de exemplo do kit |
+
+Os parâmetros do anúncio (`utm_*`, `fbclid`, `src`, `sck`) são repassados sozinhos para o checkout,
+para a venda ser atribuída à campanha. O Pixel da Meta só é carregado depois que você preenche
+`META_PIXEL_ID`; o `index.html` dessa página já libera os domínios da Meta no `Content-Security-Policy`.
+Na Vercel/Netlify, libere também em `vercel.json` e `public/_headers`.

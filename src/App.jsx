@@ -9,7 +9,7 @@ import Sample from './components/Sample.jsx'
 import TimeCompare from './components/TimeCompare.jsx'
 import Fit from './components/Fit.jsx'
 import Author from './components/Author.jsx'
-import Offer from './components/Offer.jsx' var META_PIXEL_ID = '1355836776679945';
+import Offer from './components/Offer.jsx'
 import Guarantee from './components/Guarantee.jsx'
 import Faq from './components/Faq.jsx'
 import { FinalCta, Footer, MobileBar } from './components/Footer.jsx'

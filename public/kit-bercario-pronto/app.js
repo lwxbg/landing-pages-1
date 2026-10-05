@@ -9,7 +9,7 @@
   var SEGUNDOS_DA_MISSAO = 40;
 
   // ID do Pixel da Meta (só números). Vazio = nenhum pixel é carregado.
-  var META_PIXEL_ID = '';
+  var META_PIXEL_ID = '1355836776679945';
 
   // Sites de checkout aceitos nos botões de compra (mesma lista de src/security.js).
   // Um link de fora dessa lista é ignorado e o botão só leva até a oferta.

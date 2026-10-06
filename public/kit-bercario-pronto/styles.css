@@ -156,3 +156,42 @@ a { color: #6F4F9C } a:hover { color: #4F3878 }
 .kbp-bar-preco span { display: block; margin-top: 2px; font-size: 12px; font-weight: 800; line-height: 1.2; color: #5A4334 }
 .kbp-bar-btn { flex: none; box-sizing: border-box; display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 8px 24px; border-radius: 16px; background: #11873F; color: #FFFFFF; font-size: 18px; font-weight: 900; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 0 #0A5C2A; animation: kbp-glow-bar 1.6s ease-out infinite }
 @media (prefers-reduced-motion: reduce) { .kbp-cta, .kbp-cta::after, .kbp-bar-btn { animation: none } .kbp-bar { transition: none } }
+
+/* ===== Oferta: duas opções (simples e Super Oferta com os 3 kits) ===== */
+.kof { margin-top: 26px; display: grid; grid-template-columns: 1fr; gap: 30px; align-items: stretch }
+@media (min-width: 640px) { .kof { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr); gap: 18px } }
+.kof-card { position: relative; box-sizing: border-box; display: flex; flex-direction: column; gap: 6px; background: #FFFFFF; border: 2px solid #EDE1CC; border-radius: 26px; padding: 22px 20px }
+.kof-super { border: 3px solid #E8875A; padding-top: 26px; box-shadow: 0 12px 30px rgba(224, 120, 74, 0.22) }
+.kof-selo { position: absolute; left: 50%; top: 0; translate: -50% -55%; display: flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 999px; background: #E8875A; color: #FFFFFF; font-size: 12px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap }
+.kof-nome { font-family: 'Young Serif', Georgia, serif; font-size: 22px; line-height: 1.15; color: #4A2A12 }
+.kof-desc { font-size: 14px; font-weight: 700; line-height: 1.35; color: #8A7666 }
+.kof-preco { margin-top: 8px; font-family: 'Young Serif', Georgia, serif; font-size: 46px; line-height: 1; font-variant-numeric: lining-nums; color: #4A2A12 }
+.kof-rs { font-size: 22px; margin-right: 2px }
+.kof-cent { font-size: 24px }
+.kof-preco-super { font-size: 56px; color: #E0784A }
+.kof-preco-super .kof-rs { font-size: 26px }
+.kof-preco-super .kof-cent { font-size: 28px }
+.kof-seguro { font-size: 13px; font-weight: 800; color: #447D32 }
+.kof-lista { margin: 10px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 14px; font-weight: 700; line-height: 1.35; color: #5A4334 }
+.kof-lista li { display: flex; align-items: flex-start; gap: 8px }
+.kof-lista svg { flex: none; margin-top: 1px }
+.kof-lista b { font-weight: 900; color: #4A2A12 }
+.kof-nao { color: #9A8778 }
+.kof-fim { margin-top: auto; padding-top: 18px; display: flex; flex-direction: column; gap: 12px }
+.kof-btn-simples { display: flex; align-items: center; justify-content: center; min-height: 54px; padding: 8px 16px; border-radius: 18px; border: 2px solid #E3D7C3; background: #FFFFFF; color: #5A4334; font-size: 16px; font-weight: 900; text-decoration: none; text-align: center }
+.kof-btn-simples:hover { color: #4A2A12; border-color: #CDBDA3 }
+.kof-aviso { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 14px 16px; border-radius: 18px; border: 2px solid #F6D3C0; background: #FDF0E6; color: #D9673A; font-size: 14px; font-weight: 800; line-height: 1.35; text-align: center; text-decoration: none }
+.kof-aviso:hover { color: #B9532B }
+.kof-aviso svg { animation: kof-desce 1.2s ease-in-out infinite }
+@keyframes kof-desce { 0%, 100% { translate: 0 0 } 50% { translate: 0 4px } }
+.kof-capas { position: relative; height: 190px; margin: 2px 0 12px }
+.kof-capa { position: absolute; top: 18px; width: 150px; height: 150px; border-radius: 14px; border: 2px solid #FFFFFF; box-shadow: 0 8px 18px rgba(74, 42, 18, 0.2); object-fit: cover; background: #FBF7EE }
+.kof-capa-1 { left: 50%; margin-left: -150px; rotate: -9deg }
+.kof-capa-2 { left: 50%; margin-left: 0; rotate: 9deg }
+.kof-capa-3 { left: 50%; top: 4px; width: 170px; height: 170px; margin-left: -85px; z-index: 1 }
+.kof-lista-super { margin-bottom: 18px }
+.kof-btn-super { display: flex; align-items: center; justify-content: center; min-height: 66px; padding: 10px 16px; border-radius: 20px; text-decoration: none; text-align: center; background: #E8875A; box-shadow: 0 6px 0 #B9532B; animation: kbp-pulse 1.6s ease-in-out infinite, kof-glow 1.6s ease-out infinite }
+@keyframes kof-glow { 0% { box-shadow: 0 6px 0 #B9532B, 0 0 0 0 rgba(232, 135, 90, 0.6) } 70%, 100% { box-shadow: 0 6px 0 #B9532B, 0 0 0 16px rgba(232, 135, 90, 0) } }
+.kof-btn-super:hover { color: #FFFFFF }
+.kof-unico { margin-top: 12px; text-align: center; font-size: 13px; font-weight: 800; color: #5A4334 }
+@media (prefers-reduced-motion: reduce) { .kof-aviso svg, .kof-btn-super { animation: none } }

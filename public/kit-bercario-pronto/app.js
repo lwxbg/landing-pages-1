@@ -1,5 +1,6 @@
-// Kit Berçário Pronto: vídeo gamificado (missão das 3 estrelas), botões de compra e Pixel da Meta.
+// Kit Berçário Pronto: vídeo gamificado (missão das 3 estrelas), botões de compra e barra de compra fixa.
 // Textos e preço ficam no index.html. As opções que mudam o comportamento ficam aqui em cima.
+// O Pixel da Meta é configurado no pixel.js.
 (function () {
   'use strict';
 
@@ -8,8 +9,8 @@
   // Segundos de vídeo assistido para ganhar a 3ª estrela e completar a missão.
   var SEGUNDOS_DA_MISSAO = 40;
 
-  // ID do Pixel da Meta (só números). Vazio = nenhum pixel é carregado.
-  var META_PIXEL_ID = '1355836776679945';
+  // Segundos até a barra de compra fixa aparecer sozinha (ela também aparece assim que a pessoa rola a página).
+  var SEGUNDOS_ATE_A_BARRA = 3;
 
   // Sites de checkout aceitos nos botões de compra (mesma lista de src/security.js).
   // Um link de fora dessa lista é ignorado e o botão só leva até a oferta.
@@ -36,24 +37,11 @@
     paraCada('[data-if="' + nome + '"]', function (el) { el.hidden = !visivel; });
   }
 
-  // ===== Pixel da Meta =====
+  // ===== Eventos do Pixel da Meta (o pixel em si é carregado pelo pixel.js) =====
 
   function evento(nome, personalizado) {
     if (typeof window.fbq !== 'function') { return; }
     window.fbq(personalizado ? 'trackCustom' : 'track', nome);
-  }
-
-  if (/^\d{8,20}$/.test(META_PIXEL_ID)) {
-    (function (f, b, e, v, n, t, s) {
-      if (f.fbq) { return; }
-      n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
-      if (!f._fbq) { f._fbq = n; }
-      n.push = n; n.loaded = true; n.version = '2.0'; n.queue = [];
-      t = b.createElement(e); t.async = true; t.src = v;
-      s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
-    })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    window.fbq('init', META_PIXEL_ID);
-    window.fbq('track', 'PageView');
   }
 
   // ===== Botões de compra =====
@@ -86,6 +74,39 @@
     a.setAttribute('href', url.toString());
     a.addEventListener('click', function () { evento('InitiateCheckout'); });
   });
+
+  // ===== Barra de compra fixa =====
+  // Aparece depois de alguns segundos (ou assim que a pessoa rola a página) e some
+  // sempre que um dos botões de compra da própria página está visível na tela.
+
+  var barraDeCompra = document.getElementById('kbp-bar');
+  if (barraDeCompra && 'IntersectionObserver' in window) {
+    var barraLiberada = false;
+    var botoesNaTela = [];
+
+    var atualizarBarra = function () {
+      barraDeCompra.classList.toggle('kbp-bar-on', barraLiberada && botoesNaTela.length === 0);
+    };
+    var liberarBarra = function () {
+      if (barraLiberada) { return; }
+      barraLiberada = true;
+      atualizarBarra();
+    };
+
+    var observador = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada) {
+        var posicao = botoesNaTela.indexOf(entrada.target);
+        if (entrada.isIntersecting && posicao === -1) { botoesNaTela.push(entrada.target); }
+        if (!entrada.isIntersecting && posicao !== -1) { botoesNaTela.splice(posicao, 1); }
+      });
+      atualizarBarra();
+    }, { threshold: 0.5 });
+    paraCada('a.kbp-cta', function (a) { observador.observe(a); });
+
+    barraDeCompra.hidden = false;
+    setTimeout(liberarBarra, SEGUNDOS_ATE_A_BARRA * 1000);
+    window.addEventListener('scroll', function () { if (window.scrollY > 120) { liberarBarra(); } }, { passive: true });
+  }
 
   // ===== Vídeo gamificado =====
 
@@ -190,8 +211,22 @@
     desenhar();
   }
 
+  // O vídeo só começa a ser baixado depois que a página terminou de carregar,
+  // para não disputar a conexão com o que aparece primeiro na tela.
+  function prepararVideo() {
+    if (estado.iniciou || video.preload !== 'none') { return; }
+    video.preload = 'metadata';
+  }
+  if (document.readyState === 'complete') { setTimeout(prepararVideo, 1500); }
+  else { window.addEventListener('load', function () { setTimeout(prepararVideo, 1500); }); }
+
+  // As páginas reveladas pelas estrelas são baixadas quando o vídeo começa, para aparecerem na hora.
+  function aquecerImagens() {
+    paraCada('[data-if^="got"] img', function (img) { new Image().src = img.getAttribute('src'); });
+  }
+
   video.addEventListener('play', function () {
-    if (!estado.iniciou) { evento('VideoInicio', true); }
+    if (!estado.iniciou) { evento('VideoInicio', true); aquecerImagens(); }
     estado.iniciou = true; estado.tocando = true; estado.terminou = false;
     desenhar();
   });

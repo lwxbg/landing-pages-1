@@ -1,5 +1,7 @@
 /* Kit Berçário Pronto: estilos da landing page.
    As classes k1, k2... foram geradas a partir do layout; as classes kbp-* são animações e estados. */
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 600 900; font-display: swap; src: url(assets/fontes/nunito.woff2) format('woff2') }
+@font-face { font-family: 'Young Serif'; font-style: normal; font-weight: 400; font-display: swap; src: url(assets/fontes/young-serif.woff2) format('woff2') }
 [hidden] { display: none !important }
 img { max-width: 100% }
 
@@ -133,3 +135,24 @@ a { color: #6F4F9C } a:hover { color: #4F3878 }
 @supports (animation-timeline: view()) { .kbp-reveal { animation: kbp-rise linear both; animation-timeline: view(); animation-range: entry 0px entry 220px } }
 @media (prefers-reduced-motion: reduce) { .kbp-pulse, .kbp-pop, .kbp-confetti, .kbp-in, .kbp-float, .kbp-twinkle, .kbp-ring, .kbp-nudge, .kbp-reveal { animation: none } .kbp-draw path { animation: none; stroke-dashoffset: 0 } html { scroll-behavior: auto } }
 .kbp-if { display: contents }
+
+/* ===== Botão de compra em destaque ===== */
+@keyframes kbp-glow { 0% { box-shadow: 0 6px 0 #0A5C2A, 0 0 0 0 rgba(17, 135, 63, 0.6) } 70%, 100% { box-shadow: 0 6px 0 #0A5C2A, 0 0 0 16px rgba(17, 135, 63, 0) } }
+@keyframes kbp-glow-bar { 0% { box-shadow: 0 4px 0 #0A5C2A, 0 0 0 0 rgba(17, 135, 63, 0.6) } 70%, 100% { box-shadow: 0 4px 0 #0A5C2A, 0 0 0 12px rgba(17, 135, 63, 0) } }
+@keyframes kbp-shine { 0%, 60% { translate: -160% 0 } 100% { translate: 320% 0 } }
+.kbp-cta { position: relative; overflow: hidden; box-sizing: border-box; gap: 10px; min-height: 78px; padding: 12px 14px; border-radius: 20px; background: #11873F; color: #FFFFFF; box-shadow: 0 6px 0 #0A5C2A; animation: kbp-pulse 1.6s ease-in-out infinite, kbp-glow 1.6s ease-out infinite }
+.kbp-cta::after { content: ''; position: absolute; top: 0; left: 0; width: 34%; height: 100%; background: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0)); translate: -160% 0; animation: kbp-shine 3.4s ease-in-out infinite; pointer-events: none }
+.kbp-cta-txt { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 0 }
+.kbp-cta-main { font-size: clamp(16px, 4.5vw, 23px); font-weight: 900; line-height: 1.12; letter-spacing: 0.01em; text-transform: uppercase }
+.kbp-cta-sub { font-size: 14px; font-weight: 800; line-height: 1.2 }
+.kbp-cta-seta { flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: #FFFFFF }
+
+/* ===== Barra de compra fixa no rodapé da tela ===== */
+.kbp-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: #FFFFFF; border-top: 3px solid #6F4F9C; box-shadow: 0 -8px 24px rgba(43, 26, 58, 0.2); font-family: 'Nunito', 'Trebuchet MS', sans-serif; translate: 0 115%; transition: translate 0.35s ease }
+.kbp-bar.kbp-bar-on { translate: 0 0 }
+.kbp-bar-in { box-sizing: border-box; max-width: 760px; margin: 0 auto; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); display: flex; align-items: center; justify-content: space-between; gap: 12px }
+.kbp-bar-info { min-width: 0 }
+.kbp-bar-preco { font-size: 24px; font-weight: 900; line-height: 1.1; color: #6F4F9C; white-space: nowrap }
+.kbp-bar-preco span { display: block; margin-top: 2px; font-size: 12px; font-weight: 800; line-height: 1.2; color: #5A4334 }
+.kbp-bar-btn { flex: none; box-sizing: border-box; display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 8px 24px; border-radius: 16px; background: #11873F; color: #FFFFFF; font-size: 18px; font-weight: 900; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 0 #0A5C2A; animation: kbp-glow-bar 1.6s ease-out infinite }
+@media (prefers-reduced-motion: reduce) { .kbp-cta, .kbp-cta::after, .kbp-bar-btn { animation: none } .kbp-bar { transition: none } }

@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- O GitHub Pages não aceita cabeçalhos de segurança, então a proteção de scripts vai aqui.
+     Só roda script deste site e o Pixel da Meta (configurado no pixel.js). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://connect.facebook.net; style-src 'self'; font-src 'self'; img-src 'self' data: https://www.facebook.com; media-src 'self'; connect-src 'self' https://www.facebook.com https://connect.facebook.net; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<!-- O Pixel vem antes de tudo para a visita ser registrada o quanto antes. -->
+<link rel="preconnect" href="https://connect.facebook.net">
+<link rel="preload" as="script" href="https://connect.facebook.net/en_US/fbevents.js">
+<script src="pixel.js" async></script>
 <title>Kit Berçário Pronto · +120 atividades para bebês de 0 a 3 anos</title>
 <meta name="description" content="+120 atividades prontas para brincar e estimular seu bebê de 0 a 3 anos. Material digital em PDF, alinhado à BNCC, para imprimir ou abrir no celular.">
 <meta name="theme-color" content="#6F4F9C">
@@ -12,13 +19,11 @@
 <meta property="og:description" content="+120 atividades prontas para brincar e estimular seu bebê de 0 a 3 anos.">
 <meta property="og:image" content="https://lwxbg.github.io/landing-pages-1/kit-bercario-pronto/assets/capa.jpg">
 <link rel="icon" type="image/png" href="assets/icone.png">
-<!-- O GitHub Pages não aceita cabeçalhos de segurança, então a proteção de scripts vai aqui.
-     Só roda script deste site e, se o Pixel for ativado no app.js, o da Meta. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://connect.facebook.net; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.facebook.com; media-src 'self'; connect-src 'self' https://www.facebook.com https://connect.facebook.net; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&amp;family=Young+Serif&amp;display=swap">
+<!-- Fontes hospedadas aqui mesmo (sem depender do Google Fonts) para a página abrir mais rápido. -->
+<link rel="preload" href="assets/fontes/nunito.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fontes/young-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/poster.jpg" as="image" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -72,7 +77,7 @@
 <div class="k22">
 
 <div class="k23">
-<video class="k24" id="kbp-video" src="assets/vsl.mp4" poster="assets/poster.jpg" playsinline preload="metadata"></video>
+<video class="k24" id="kbp-video" src="assets/vsl.mp4" poster="assets/poster.jpg" playsinline preload="none"></video>
 <button class="k25" type="button" id="kbp-toggle" aria-label="Toque para assistir">
 <span class="kbp-if" data-if="showHint">
 <span class="k26">
@@ -116,7 +121,7 @@
 </div>
 </div>
 <div class="kbp-if" data-if="got1" hidden>
-<img class="k42 kbp-pop" src="assets/pg-sensorial.jpg" alt="Página da atividade Cesto das Descobertas">
+<img class="k42 kbp-pop" src="assets/pg-sensorial.jpg" alt="Página da atividade Cesto das Descobertas" loading="lazy">
 </div>
 </div>
 
@@ -128,7 +133,7 @@
 </div>
 </div>
 <div class="kbp-if" data-if="got2" hidden>
-<img class="k42 kbp-pop" src="assets/pg-musica.jpg" alt="Página da atividade Tambor de Pote">
+<img class="k42 kbp-pop" src="assets/pg-musica.jpg" alt="Página da atividade Tambor de Pote" loading="lazy">
 </div>
 </div>
 
@@ -140,7 +145,7 @@
 </div>
 </div>
 <div class="kbp-if" data-if="got3" hidden>
-<img class="k42 kbp-pop" src="assets/pg-brincadeira.jpg" alt="Página da brincadeira Cadê o Amiguinho?">
+<img class="k42 kbp-pop" src="assets/pg-brincadeira.jpg" alt="Página da brincadeira Cadê o Amiguinho?" loading="lazy">
 </div>
 </div>
 
@@ -148,7 +153,7 @@
 
 <div class="k43">A cada estrela, uma página real do kit é revelada.</div>
 
-<a class="k44 kbp-btn kbp-buy" data-pulse-when-done href="https://pay.cakto.com.br/39zohzw_1164115"><span>Quero meu kit por R$ 14,79</span><svg class="k45 kbp-nudge" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a class="k44 kbp-btn kbp-buy kbp-cta" data-pulse-when-done href="https://pay.cakto.com.br/39zohzw_1164115"><span class="kbp-cta-txt"><span class="kbp-cta-main">Quero meu kit agora</span><span class="kbp-cta-sub">por R$ 19,90 · pagamento único</span></span><span class="kbp-cta-seta"><svg class="kbp-nudge" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#11873F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
 
 </div>
 </div>
@@ -164,7 +169,7 @@
 
 <div class="k49 kbp-reveal">
 <div class="k50">
-<img class="k51" src="assets/capa.jpg" alt="Capa do Kit Berçário Pronto">
+<img class="k51" src="assets/capa.jpg" alt="Capa do Kit Berçário Pronto" loading="lazy" decoding="async">
 <div class="k52">
 <div class="k53">Kit completo em PDF</div>
 <h2 class="k54">Kit Berçário Pronto</h2>
@@ -176,9 +181,9 @@
 </ul>
 <div class="k58">
 <div class="k59">Pagamento único de</div>
-<div class="k60">R$ 14,79</div>
+<div class="k60">R$ 19,90</div>
 </div>
-<a class="k61 kbp-pulse kbp-btn kbp-buy" href="https://pay.cakto.com.br/39zohzw_1164115"><span>Quero meu Kit Berçário Pronto</span><svg class="k45 kbp-nudge" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a class="k61 kbp-btn kbp-buy kbp-cta" href="https://pay.cakto.com.br/39zohzw_1164115"><span class="kbp-cta-txt"><span class="kbp-cta-main">Quero meu kit agora</span></span><span class="kbp-cta-seta"><svg class="kbp-nudge" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#11873F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
 <div class="k62">
 <svg class="k45" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 L19 6 V11.5 C19 16 16 19.5 12 21 C8 19.5 5 16 5 11.5 V6 Z M9 12 L11.2 14.2 L15.2 10" fill="none" stroke="#5F7A2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 <span>Garantia de 7 dias</span>
@@ -344,12 +349,21 @@
 <svg width="40" height="38" viewBox="0 0 28 26" aria-hidden="true"><path d="M14 25 C6 19 0 13.5 0 7.5 C0 3.3 3.2 0.5 6.8 0.5 C9.6 0.5 12.4 2.2 14 5 C15.6 2.2 18.4 0.5 21.2 0.5 C24.8 0.5 28 3.3 28 7.5 C28 13.5 22 19 14 25 Z" fill="#F0BA42"></path></svg>
 <h2 class="k97">Pequenas experiências, grandes conquistas</h2>
 <p class="k98">Tenha sempre uma atividade pronta para o próximo momento com o seu bebê.</p>
-<a class="k99 kbp-pulse kbp-btn kbp-buy" href="https://pay.cakto.com.br/39zohzw_1164115"><span>Quero meu Kit Berçário Pronto</span><svg class="k45 kbp-nudge" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a class="k99 kbp-btn kbp-buy kbp-cta" href="https://pay.cakto.com.br/39zohzw_1164115"><span class="kbp-cta-txt"><span class="kbp-cta-main">Quero meu kit agora</span><span class="kbp-cta-sub">por R$ 19,90 · pagamento único</span></span><span class="kbp-cta-seta"><svg class="kbp-nudge" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#11873F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
 </div>
 </section>
 
 <div class="k100">Kit Berçário Pronto · Produto digital em PDF</div>
 
+</div>
+<!-- Barra de compra fixa no rodapé da tela: aparece quando nenhum botão de compra da página está visível. -->
+<div class="kbp-bar" id="kbp-bar" hidden>
+<div class="kbp-bar-in">
+<div class="kbp-bar-info">
+<div class="kbp-bar-preco">R$ 19,90 <span>pagamento único</span></div>
+</div>
+<a class="kbp-bar-btn kbp-btn kbp-buy" href="https://pay.cakto.com.br/39zohzw_1164115">Quero o meu</a>
+</div>
 </div>
 <script src="app.js" defer></script>
 </body>

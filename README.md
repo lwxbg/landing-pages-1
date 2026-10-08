@@ -107,9 +107,9 @@ no endereço `https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/kit-bercario-pro
 |---|---|
 | `index.html` | Textos e a seção de oferta (`id="oferta"`), com duas opções: **Oferta simples** (R$ 19,90, link `pay.cakto.com.br/39zohzw_1164115`) e **Super Oferta** com os 3 kits (R$ 27,90, link `pay.cakto.com.br/cbemoi7_1178434`). Os outros botões da página e a barra fixa levam até essa seção |
 | `pixel.js` | ID do Pixel da Meta (`META_PIXEL_ID`). É carregado no topo da página para registrar a visita o quanto antes |
-| `app.js` | Tempo da missão das 3 estrelas (`SEGUNDOS_DA_MISSAO`) e tempo até a barra de compra fixa aparecer (`SEGUNDOS_ATE_A_BARRA`) |
+| `app.js` | Vendas reais da notificação de compra (`VENDAS_REAIS`) e tempo até a barra de compra fixa aparecer (`SEGUNDOS_ATE_A_BARRA`) |
 | `styles.css` | Visual e animações |
-| `assets/` | Vídeo (`vsl.mp4`), capas dos kits (`capa.jpg`, `kit-datas.jpg`, `kit-planejamento.jpg`), páginas de exemplo do kit e fontes (`fontes/`, hospedadas aqui para a página abrir mais rápido) |
+| `assets/` | Imagem do topo (`kits-topo.jpg`), capas dos kits (`capa.jpg`, `kit-datas.jpg`, `kit-planejamento.jpg`), páginas de exemplo do kit e fontes (`fontes/`, hospedadas aqui para a página abrir mais rápido) |
 
 Os parâmetros do anúncio (`utm_*`, `fbclid`, `src`, `sck`) são repassados sozinhos para o checkout,
 para a venda ser atribuída à campanha. O Pixel da Meta só é carregado se `META_PIXEL_ID` estiver

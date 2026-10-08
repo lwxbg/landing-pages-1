@@ -21,52 +21,9 @@ img { max-width: 100% }
 .k14 { position: relative; display: inline-block; color: #5F7A2A }
 .k15 { position: absolute; left: 0; top: 94%; width: 100%; height: auto; overflow: visible }
 .k16 { --d: 0.32s; margin: 20px 0 0; max-width: 560px; font-size: clamp(17px, 4.2vw, 19px); color: #5A4334; text-wrap: pretty }
-.k17 { --d: 0.45s; position: relative; margin-top: 20px; width: 100%; box-sizing: border-box; background: #FFFFFF; border: 3px solid #6F4F9C; border-radius: 28px; padding: 16px; box-shadow: 0 10px 0 rgba(111, 79, 156, 0.2); text-align: left }
-.k18 { display: flex; align-items: center; justify-content: space-between; gap: 12px }
-.k19 { font-size: 12px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: #5F7A2A }
-.k20 { font-family: 'Young Serif', Georgia, serif; font-size: 21px; line-height: 1.15; color: #4A2A12 }
-.k21 { flex: none; display: flex; gap: 3px }
-.k22 { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 18px; justify-content: center }
-.k23 { position: relative; flex: 1 1 260px; max-width: 340px; border-radius: 20px; overflow: hidden; background: #2B1A3A }
-.k24 { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; background: #2B1A3A }
-.k25 { position: absolute; left: 0; top: 0; width: 100%; height: 100%; margin: 0; padding: 0; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: inherit }
-.k26 { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 18px 20px; border-radius: 22px; background: rgba(43, 26, 58, 0.66); color: #FFFFFF }
-.k27 { position: relative; display: flex; width: 72px; height: 72px }
-.k28 { position: absolute; left: 0; top: 0; width: 72px; height: 72px; border-radius: 50%; background: #F0BA42 }
-.k29 { position: relative; display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: #F0BA42 }
-.k30 { font-size: 17px; font-weight: 900; line-height: 1.2 }
-.k31 { position: absolute; left: 0; right: 0; bottom: 0; box-sizing: border-box; padding: 22px 32px 20px 16px; background: rgba(43, 26, 58, 0.62); pointer-events: none }
-.k32 { position: relative; height: 10px; border-radius: 5px; background: rgba(255, 255, 255, 0.4) }
-.k33 { height: 100%; border-radius: 5px; background: #F0BA42; width: 0%; transition: width 0.5s linear }
-.k34 { position: absolute; left: 33.33%; top: 50%; width: 28px; height: 28px; margin: -14px 0 0 -14px; box-sizing: border-box; border-radius: 50%; border: 2.5px solid #FFFFFF; background: #8E7AAE; display: flex; align-items: center; justify-content: center }
-.k35 { position: absolute; left: 66.66%; top: 50%; width: 28px; height: 28px; margin: -14px 0 0 -14px; box-sizing: border-box; border-radius: 50%; border: 2.5px solid #FFFFFF; background: #8E7AAE; display: flex; align-items: center; justify-content: center }
-.k36 { position: absolute; left: 100%; top: 50%; width: 34px; height: 34px; margin: -17px 0 0 -17px; box-sizing: border-box; border-radius: 50%; border: 2.5px solid #FFFFFF; background: #8E7AAE; display: flex; align-items: center; justify-content: center }
-.k37 { flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 14px }
-.k38 { font-size: 16px; font-weight: 800; line-height: 1.35; color: #4A2A12 }
-.k39 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px }
-.k40 { position: relative; aspect-ratio: 3 / 4; box-sizing: border-box; border-radius: 14px; overflow: hidden; background: #F3ECFA; border: 2px dashed #B9A3D9 }
-.k41 { position: absolute; left: 0; top: 0; width: 100%; height: 100%; box-sizing: border-box; padding: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; font-size: 13px; font-weight: 800; line-height: 1.2; color: #6F4F9C }
-.k42 { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover }
-.k43 { font-size: 14px; font-weight: 700; line-height: 1.35; color: #5A4334 }
 .k44 { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 58px; padding: 8px 16px; border-radius: 16px; background: #447D32; color: #FFFFFF; font-size: 18px; font-weight: 900; line-height: 1.2; text-decoration: none; text-align: center; box-shadow: 0 5px 0 #2E5822 }
-.k45 { flex: none }
-.k46 { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; border-radius: 25px; pointer-events: none }
 .k47 { position: relative; background: #F3ECFA; padding: 52px 20px 60px }
 .k48 { max-width: 760px; margin: 0 auto }
-.k49 { box-sizing: border-box; background: #FFFFFF; border: 3px solid #6F4F9C; border-radius: 28px; padding: 22px; box-shadow: 0 10px 0 rgba(111, 79, 156, 0.2) }
-.k50 { display: flex; flex-wrap: wrap; gap: 22px; align-items: center; justify-content: center }
-.k51 { flex: 0 1 270px; width: 270px; max-width: 100%; aspect-ratio: 1 / 1; border-radius: 20px; border: 2px solid #EDE1CC }
-.k52 { flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 14px }
-.k53 { align-self: flex-start; padding: 5px 14px; border-radius: 999px; background: #FCF1D3; font-size: 13px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; color: #7A5206 }
-.k54 { margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(28px, 7vw, 38px); line-height: 1.1; color: #6F4F9C }
-.k55 { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; font-weight: 700 }
-.k56 { display: flex; align-items: flex-start; gap: 10px }
-.k57 { flex: none; margin-top: 2px }
-.k58 { box-sizing: border-box; display: flex; flex-direction: column; justify-content: center }
-.k59 { font-size: 15px; font-weight: 800; color: #5A4334 }
-.k60 { font-family: 'Young Serif', Georgia, serif; font-size: clamp(34px, 9vw, 46px); line-height: 1.1; font-variant-numeric: lining-nums; color: #6F4F9C }
-.k61 { display: flex; align-items: center; justify-content: center; min-height: 64px; padding: 10px 18px; border-radius: 18px; background: #447D32; color: #FFFFFF; font-size: 20px; font-weight: 900; line-height: 1.2; text-decoration: none; text-align: center; box-shadow: 0 6px 0 #2E5822; gap: 10px }
-.k62 { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 800; color: #5A4334 }
 .k63 { padding: 56px 20px }
 .k64 { margin: 0; text-align: center; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(27px, 6.8vw, 40px); line-height: 1.12; color: #6F4F9C; text-wrap: balance }
 .k65 { margin: 10px auto 0; max-width: 520px; text-align: center; color: #5A4334 }
@@ -195,3 +152,27 @@ a { color: #6F4F9C } a:hover { color: #4F3878 }
 .kof-btn-super:hover { color: #FFFFFF }
 .kof-unico { margin-top: 12px; text-align: center; font-size: 13px; font-weight: 800; color: #5A4334 }
 @media (prefers-reduced-motion: reduce) { .kof-aviso svg, .kof-btn-super { animation: none } }
+
+/* ===== Garantia de 7 dias ===== */
+.kgar { margin-top: 30px; box-sizing: border-box; background: #FFFFFF; border: 2px solid #EDE1CC; border-radius: 26px; padding: 26px 22px 24px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center }
+.kgar-selo { width: 112px; height: 112px; filter: drop-shadow(0 6px 10px rgba(185, 129, 31, 0.3)) }
+.kgar-titulo { margin: 6px 0 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(24px, 6vw, 30px); line-height: 1.15; color: #4A2A12 }
+.kgar-texto { margin: 0; max-width: 520px; font-size: 16px; color: #5A4334; text-wrap: pretty }
+
+/* ===== Notificação de compra (canto inferior esquerdo) ===== */
+.kbp-venda { position: fixed; left: 12px; bottom: calc(14px + env(safe-area-inset-bottom)); z-index: 60; box-sizing: border-box; max-width: min(330px, calc(100vw - 24px)); display: flex; align-items: center; gap: 10px; padding: 10px 30px 10px 10px; border-radius: 16px; background: #FFFFFF; border: 2px solid #CDE8D5; box-shadow: 0 10px 28px rgba(43, 26, 58, 0.22); font-family: 'Nunito', 'Trebuchet MS', sans-serif; font-size: 14px; font-weight: 700; line-height: 1.3; color: #4A2A12; opacity: 0; translate: -16px 0; transition: opacity 0.35s ease, translate 0.35s ease, bottom 0.35s ease; pointer-events: none }
+.kbp-venda.kbp-venda-on { opacity: 1; translate: 0 0; pointer-events: auto }
+.kbp-bar.kbp-bar-on ~ .kbp-venda { bottom: calc(88px + env(safe-area-inset-bottom)) }
+.kbp-venda-icone { flex: none }
+.kbp-venda-txt { min-width: 0 }
+.kbp-venda-topo { font-size: 12px; font-weight: 900; color: #11873F; text-transform: uppercase; letter-spacing: 0.03em }
+.kbp-venda-quando { font-weight: 700; color: #8A7666; text-transform: none; letter-spacing: 0 }
+.kbp-venda b { font-weight: 900 }
+.kbp-venda-fechar { position: absolute; top: 4px; right: 6px; width: 24px; height: 24px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #8A7666; font-size: 18px; line-height: 1; cursor: pointer }
+@media (prefers-reduced-motion: reduce) { .kbp-venda { transition: none; translate: 0 0 } }
+
+
+/* ===== Topo: imagem dos kits e botão ===== */
+.khero-img { --d: 0.42s; display: block; width: 100%; max-width: 560px; height: auto; margin-top: 18px }
+.khero-cta { --d: 0.5s; width: 100%; max-width: 460px; margin-top: 6px }
+.khero-selos { --d: 0.56s; margin-top: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; font-size: 14px; font-weight: 800; color: #447D32 }

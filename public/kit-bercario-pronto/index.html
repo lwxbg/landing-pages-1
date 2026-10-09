@@ -6,10 +6,12 @@
 <!-- O GitHub Pages não aceita cabeçalhos de segurança, então a proteção de scripts vai aqui.
      Só roda script deste site e o Pixel da Meta (configurado no pixel.js). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://connect.facebook.net; style-src 'self'; font-src 'self'; img-src 'self' data: https://www.facebook.com; media-src 'self'; connect-src 'self' https://www.facebook.com https://connect.facebook.net; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
-<!-- O Pixel vem antes de tudo para a visita ser registrada o quanto antes. -->
+<!-- O Pixel vem antes de tudo e com prioridade alta, para a visita ser registrada o quanto antes.
+     A conexão com o facebook.com (para onde o evento é enviado) já é aberta enquanto a página carrega. -->
 <link rel="preconnect" href="https://connect.facebook.net">
+<link rel="preconnect" href="https://www.facebook.com">
 <link rel="preload" as="script" href="https://connect.facebook.net/en_US/fbevents.js">
-<script src="pixel.js" async></script>
+<script src="pixel.js" async fetchpriority="high"></script>
 <title>Kit Berçário Pronto · +205 atividades para bebês de 0 a 3 anos</title>
 <meta name="description" content="+205 atividades prontas para brincar e estimular seu bebê de 0 a 3 anos. Material digital em PDF, alinhado à BNCC, para imprimir ou abrir no celular.">
 <meta name="theme-color" content="#6F4F9C">
@@ -23,7 +25,7 @@
 <!-- Fontes hospedadas aqui mesmo (sem depender do Google Fonts) para a página abrir mais rápido. -->
 <link rel="preload" href="assets/fontes/nunito.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fontes/young-serif.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/kits-topo.jpg" as="image" fetchpriority="high">
+<link rel="preload" href="assets/poster.jpg" as="image" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -60,15 +62,107 @@
 
 <p class="k16 kbp-in">Chega de ficar sem ideia do que fazer. As atividades já vêm com objetivo, materiais simples e passo a passo: é só abrir o PDF e brincar.</p>
 
-<img class="khero-img kbp-in" src="assets/kits-topo.jpg" width="1000" height="680" alt="Capas do Kit Berçário Pronto, do Kit Datas Comemorativas Berçário e do Planejamento Berçário" fetchpriority="high" decoding="async">
+<div id="video" class="k17 kbp-in">
 
-<a class="k44 khero-cta kbp-btn kbp-cta kbp-in" href="#oferta"><span class="kbp-cta-txt"><span class="kbp-cta-main">Quero meu kit agora</span><span class="kbp-cta-sub">a partir de R$ 19,90</span></span><span class="kbp-cta-seta"><svg class="kbp-nudge" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#11873F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
-
-<div class="khero-selos kbp-in">
-<span>✓ Acesso logo após o pagamento</span>
-<span>✓ Garantia de 7 dias</span>
+<div class="k18">
+<div>
+<div class="k19">Missão das 3 estrelas</div>
+<div class="k20">Assista e veja o kit por dentro</div>
+</div>
+<div class="k21" role="img" aria-label="0 de 3 estrelas" data-stars-label>
+<svg data-pop="1" width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,3 14.35,9.26 21.03,9.56 15.8,13.74 17.58,20.19 12,16.5 6.42,20.19 8.2,13.74 2.97,9.56 9.65,9.26" fill="#DCCFEC" stroke="#DCCFEC" data-star="1" stroke-width="1.6" stroke-linejoin="round"></polygon></svg>
+<svg data-pop="2" width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,3 14.35,9.26 21.03,9.56 15.8,13.74 17.58,20.19 12,16.5 6.42,20.19 8.2,13.74 2.97,9.56 9.65,9.26" fill="#DCCFEC" stroke="#DCCFEC" data-star="2" stroke-width="1.6" stroke-linejoin="round"></polygon></svg>
+<svg data-pop="3" width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,3 14.35,9.26 21.03,9.56 15.8,13.74 17.58,20.19 12,16.5 6.42,20.19 8.2,13.74 2.97,9.56 9.65,9.26" fill="#DCCFEC" stroke="#DCCFEC" data-star="3" stroke-width="1.6" stroke-linejoin="round"></polygon></svg>
+</div>
 </div>
 
+<div class="k22">
+
+<div class="k23">
+<video class="k24" id="kbp-video" src="assets/vsl.mp4" poster="assets/poster.jpg" playsinline preload="none"></video>
+<button class="k25" type="button" id="kbp-toggle" aria-label="Toque para assistir">
+<span class="kbp-if" data-if="showHint">
+<span class="k26">
+<span class="k27">
+<span class="k28 kbp-ring"></span>
+<span class="k29 kbp-pulse">
+<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.2 V17.8 L18.4 12 Z" fill="#4A2A12" stroke="#4A2A12" stroke-width="2" stroke-linejoin="round"></path></svg>
+</span>
+</span>
+<span class="k30" data-play-label>Toque para assistir</span>
+</span>
+</span>
+</button>
+<div class="k31" aria-hidden="true">
+<div class="k32">
+<div class="k33" data-fill></div>
+<div class="k34" data-pop="1" data-mark="1">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,3 14.35,9.26 21.03,9.56 15.8,13.74 17.58,20.19 12,16.5 6.42,20.19 8.2,13.74 2.97,9.56 9.65,9.26" fill="#FFFFFF"></polygon></svg>
+</div>
+<div class="k35" data-pop="2" data-mark="2">
+<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,3 14.35,9.26 21.03,9.56 15.8,13.74 17.58,20.19 12,16.5 6.42,20.19 8.2,13.74 2.97,9.56 9.65,9.26" fill="#FFFFFF"></polygon></svg>
+</div>
+<div class="k36" data-pop="3" data-mark="3">
+<svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,3 14.35,9.26 21.03,9.56 15.8,13.74 17.58,20.19 12,16.5 6.42,20.19 8.2,13.74 2.97,9.56 9.65,9.26" fill="#FFFFFF"></polygon></svg>
+</div>
+</div>
+</div>
+</div>
+
+<div class="k37">
+
+<div class="k38" role="status">Toque no vídeo para começar a missão.</div>
+
+<div class="k39">
+
+<div class="k40">
+<div class="kbp-if" data-if="lock1">
+<div class="k41">
+<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5" fill="none" stroke="#6F4F9C" stroke-width="2.2"></rect><path d="M8 11 V8 a4 4 0 0 1 8 0 V11" fill="none" stroke="#6F4F9C" stroke-width="2.2" stroke-linecap="round"></path></svg>
+<div>1ª estrela</div>
+</div>
+</div>
+<div class="kbp-if" data-if="got1" hidden>
+<picture><source srcset="assets/pg-sensorial.webp" type="image/webp"><img class="k42 kbp-pop" src="assets/pg-sensorial.jpg" alt="Página da atividade Cesto das Descobertas" loading="lazy"></picture>
+</div>
+</div>
+
+<div class="k40">
+<div class="kbp-if" data-if="lock2">
+<div class="k41">
+<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5" fill="none" stroke="#6F4F9C" stroke-width="2.2"></rect><path d="M8 11 V8 a4 4 0 0 1 8 0 V11" fill="none" stroke="#6F4F9C" stroke-width="2.2" stroke-linecap="round"></path></svg>
+<div>2ª estrela</div>
+</div>
+</div>
+<div class="kbp-if" data-if="got2" hidden>
+<picture><source srcset="assets/pg-musica.webp" type="image/webp"><img class="k42 kbp-pop" src="assets/pg-musica.jpg" alt="Página da atividade Tambor de Pote" loading="lazy"></picture>
+</div>
+</div>
+
+<div class="k40">
+<div class="kbp-if" data-if="lock3">
+<div class="k41">
+<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5" fill="none" stroke="#6F4F9C" stroke-width="2.2"></rect><path d="M8 11 V8 a4 4 0 0 1 8 0 V11" fill="none" stroke="#6F4F9C" stroke-width="2.2" stroke-linecap="round"></path></svg>
+<div>3ª estrela</div>
+</div>
+</div>
+<div class="kbp-if" data-if="got3" hidden>
+<picture><source srcset="assets/pg-brincadeira.webp" type="image/webp"><img class="k42 kbp-pop" src="assets/pg-brincadeira.jpg" alt="Página da brincadeira Cadê o Amiguinho?" loading="lazy"></picture>
+</div>
+</div>
+
+</div>
+
+<div class="k43">A cada estrela, uma página real do kit é revelada.</div>
+
+<a class="k44 kbp-btn kbp-cta" data-pulse-when-done href="#oferta"><span class="kbp-cta-txt"><span class="kbp-cta-main">Quero meu kit agora</span><span class="kbp-cta-sub">a partir de R$ 19,90</span></span><span class="kbp-cta-seta"><svg class="kbp-nudge" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#11873F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+
+</div>
+</div>
+
+<div class="k46" id="kbp-confetti" aria-hidden="true" hidden></div>
+
+</div>
 </div>
 </section>
 
@@ -97,9 +191,9 @@
 <div class="kof-card kof-super kbp-reveal" id="super-oferta">
 <div class="kof-selo"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8 L7.5 12 L12 5 L16.5 12 L21 8 L19 18 H5 Z" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round"></path></svg>Mais vendida</div>
 <div class="kof-capas">
-<img class="kof-capa kof-capa-1" src="assets/kit-datas.jpg" alt="Capa do Kit Datas Comemorativas Berçário" loading="lazy" decoding="async">
-<img class="kof-capa kof-capa-2" src="assets/kit-planejamento.jpg" alt="Capa do Planejamento Berçário" loading="lazy" decoding="async">
-<img class="kof-capa kof-capa-3" src="assets/capa.jpg" alt="Capa do Kit Berçário Pronto" loading="lazy" decoding="async">
+<picture><source srcset="assets/kit-datas.webp" type="image/webp"><img class="kof-capa kof-capa-1" src="assets/kit-datas.jpg" alt="Capa do Kit Datas Comemorativas Berçário" loading="lazy" decoding="async"></picture>
+<picture><source srcset="assets/kit-planejamento.webp" type="image/webp"><img class="kof-capa kof-capa-2" src="assets/kit-planejamento.jpg" alt="Capa do Planejamento Berçário" loading="lazy" decoding="async"></picture>
+<picture><source srcset="assets/capa.webp" type="image/webp"><img class="kof-capa kof-capa-3" src="assets/capa.jpg" alt="Capa do Kit Berçário Pronto" loading="lazy" decoding="async"></picture>
 </div>
 <div class="kof-nome">Super Oferta</div>
 <div class="kof-desc">Os 3 kits do berçário: atividades, datas comemorativas e planejamento da rotina.</div>
@@ -193,12 +287,12 @@
 <h2 class="k64 kbp-reveal">Veja o kit por dentro</h2>
 <p class="k65">Estas são páginas reais do material que você vai receber.</p>
 <div class="k75">
-<figure class="k76 kbp-reveal"><img class="k77" src="assets/pg-sensorial.jpg" alt="Página da atividade Cesto das Descobertas" loading="lazy"><figcaption class="k78">Cesto das Descobertas</figcaption></figure>
-<figure class="k76 kbp-reveal"><img class="k77" src="assets/pg-motora.jpg" alt="Página da atividade Bolinhas no Cesto" loading="lazy"><figcaption class="k78">Bolinhas no Cesto</figcaption></figure>
-<figure class="k76 kbp-reveal"><img class="k77" src="assets/pg-musica.jpg" alt="Página da atividade Tambor de Pote" loading="lazy"><figcaption class="k78">Tambor de Pote</figcaption></figure>
-<figure class="k76 kbp-reveal"><img class="k77" src="assets/pg-brincadeira.jpg" alt="Página da brincadeira Cadê o Amiguinho?" loading="lazy"><figcaption class="k78">Cadê o Amiguinho?</figcaption></figure>
-<figure class="k76 kbp-reveal"><img class="k77" src="assets/pg-pintura.jpg" alt="Página de pintura e colagem da ovelhinha" loading="lazy"><figcaption class="k78">Pintura e colagem</figcaption></figure>
-<figure class="k76 kbp-reveal"><img class="k77" src="assets/pg-diversas.jpg" alt="Página da atividade Sombras" loading="lazy"><figcaption class="k78">Sombras</figcaption></figure>
+<figure class="k76 kbp-reveal"><picture><source srcset="assets/pg-sensorial.webp" type="image/webp"><img class="k77" src="assets/pg-sensorial.jpg" alt="Página da atividade Cesto das Descobertas" loading="lazy"></picture><figcaption class="k78">Cesto das Descobertas</figcaption></figure>
+<figure class="k76 kbp-reveal"><picture><source srcset="assets/pg-motora.webp" type="image/webp"><img class="k77" src="assets/pg-motora.jpg" alt="Página da atividade Bolinhas no Cesto" loading="lazy"></picture><figcaption class="k78">Bolinhas no Cesto</figcaption></figure>
+<figure class="k76 kbp-reveal"><picture><source srcset="assets/pg-musica.webp" type="image/webp"><img class="k77" src="assets/pg-musica.jpg" alt="Página da atividade Tambor de Pote" loading="lazy"></picture><figcaption class="k78">Tambor de Pote</figcaption></figure>
+<figure class="k76 kbp-reveal"><picture><source srcset="assets/pg-brincadeira.webp" type="image/webp"><img class="k77" src="assets/pg-brincadeira.jpg" alt="Página da brincadeira Cadê o Amiguinho?" loading="lazy"></picture><figcaption class="k78">Cadê o Amiguinho?</figcaption></figure>
+<figure class="k76 kbp-reveal"><picture><source srcset="assets/pg-pintura.webp" type="image/webp"><img class="k77" src="assets/pg-pintura.jpg" alt="Página de pintura e colagem da ovelhinha" loading="lazy"></picture><figcaption class="k78">Pintura e colagem</figcaption></figure>
+<figure class="k76 kbp-reveal"><picture><source srcset="assets/pg-diversas.webp" type="image/webp"><img class="k77" src="assets/pg-diversas.jpg" alt="Página da atividade Sombras" loading="lazy"></picture><figcaption class="k78">Sombras</figcaption></figure>
 </div>
 </div>
 </section>
